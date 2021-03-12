@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', 'ImageController@index')->name('images.index');
-
-
 Route::get('image/store','ImageController@store')->name('post.store');
-//Route::match(['get', 'post'], 'image/store', 'ImageController@store')->name('post');
-
-
 Route::resource('images','ImageController');
