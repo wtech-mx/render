@@ -18,5 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/', 'ImageController@index')->name('images.index');
-Route::post('CreateImage','ImageController@store')->name('images.store');
+
+
+Route::get('image/store','ImageController@store')->name('post.store');
+//Route::match(['get', 'post'], 'image/store', 'ImageController@store')->name('post');
+
+
 Route::resource('images','ImageController');
